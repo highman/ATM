@@ -13,8 +13,8 @@ import java.util.TreeMap;
 
 public class Entity {	
 	private int total;	
-	private Map<Integer, Integer> currMap = null; // действующая карта номинал = количество
-	private Map<Integer, Integer> tmpMap = null;  // вспомогательная карта. 
+	private Map<Integer, Integer> currMap = null; 
+	private Map<Integer, Integer> tmpMap = null;  
 	
 	public Entity() {		
 		currMap = new TreeMap<>();
@@ -39,16 +39,16 @@ public class Entity {
 		if(amount > total) 
 			throw new IOException();
 		else {	
-			int currValue, // Номинал купюры 
-				currNum,   // Текущее наличие купюр выбранного номинала 
-				needNum,   // Необходимое количество купюр выбранного номинала для выдачи				 
-				rest;      // Остаток для выдачи в других купюрах
+			int currValue, // РќРѕРјРёРЅР°Р» РєСѓРїСЋСЂС‹
+				currNum,   // РўРµРєСѓС‰РµРµ РЅР°Р»РёС‡РёРµ РєСѓРїСЋСЂ РІС‹Р±СЂР°РЅРЅРѕРіРѕ РЅРѕРјРёРЅР°Р»Р°
+				needNum,   // РќРµРѕР±С…РѕРґРёРјРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РєСѓРїСЋСЂ РІС‹Р±СЂР°РЅРЅРѕРіРѕ РЅРѕРјРёРЅР°Р»Р° РґР»СЏ РІС‹РґР°С‡Рё				 
+				rest;      // РћСЃС‚Р°С‚РѕРє РґР»СЏ РІС‹РґР°С‡Рё РІ РґСЂСѓРіРёС… РєСѓРїСЋСЂР°С…
 			
 			tmpMap = new TreeMap<>(currMap);
 			Properties tactic = new Properties();
 			
-			List<Integer> list = new ArrayList<Integer>(currMap.keySet()); // Получаем перечень всех доступных номиналов
-			Collections.reverse(list); 								   // Сортируем список в обратном порядке от большего к меньшему
+			List<Integer> list = new ArrayList<Integer>(currMap.keySet()); // РџРѕР»СѓС‡Р°РµРј РїРµСЂРµС‡РµРЅСЊ РІСЃРµС… РґРѕСЃС‚СѓРїРЅС‹С… РЅРѕРјРёРЅР°Р»РѕРІ
+			Collections.reverse(list); 								       // РЎРѕСЂС‚РёСЂСѓРµРј СЃРїРёСЃРѕРє РІ РѕР±СЂР°С‚РЅРѕРј РїРѕСЂСЏРґРєРµ РѕС‚ Р±РѕР»СЊС€РµРіРѕ Рє РјРµРЅСЊС€РµРјСѓ
 			Iterator<Integer> litr = list.listIterator();
 						
 			while(litr.hasNext()) {				
