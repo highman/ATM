@@ -17,7 +17,7 @@ public class Entity {
 	private Map<Integer, Integer> tmpMap = null;  
 	
 	public Entity() {		
-		currMap = new TreeMap<>();
+		currMap = new TreeMap<Integer,Integer>();
 		total = 0;
 	}
 				
@@ -43,7 +43,7 @@ public class Entity {
 				needNum,   				 
 				rest;      
 			
-			tmpMap = new TreeMap<>(currMap);
+			tmpMap = new TreeMap<Integer,Integer>(currMap);
 			Properties tactic = new Properties();
 			
 			List<Integer> list = new ArrayList<Integer>(currMap.keySet()); 
