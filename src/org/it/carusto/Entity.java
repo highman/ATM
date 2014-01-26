@@ -13,8 +13,7 @@ import java.util.TreeMap;
 
 public class Entity {	
 	private int total;	
-	private Map<Integer, Integer> currMap = null; 
-	private Map<Integer, Integer> tmpMap = null;  
+	private Map<Integer, Integer> currMap = null; 	 
 	
 	public Entity() {		
 		currMap = new TreeMap<Integer,Integer>();
@@ -43,7 +42,7 @@ public class Entity {
 				needNum,   				 
 				rest;      
 			
-			tmpMap = new TreeMap<Integer,Integer>(currMap);
+			Map<Integer, Integer> tmpMap = new TreeMap<Integer,Integer>(currMap);
 			Properties tactic = new Properties();
 			
 			List<Integer> list = new ArrayList<Integer>(currMap.keySet()); 
