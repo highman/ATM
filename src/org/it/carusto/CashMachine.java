@@ -14,8 +14,7 @@ public class CashMachine {
 	static Map<String, Entity> currencyMap = new HashMap<String, Entity>();
 	
 
-	public static void main(String[] args) {			
-		
+	public static void main(String[] args) {					
 		try(Scanner scan = new Scanner(System.in)) {
 			String input;	
 			Entity entity = null;

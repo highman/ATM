@@ -39,16 +39,16 @@ public class Entity {
 		if(amount > total) 
 			throw new IOException();
 		else {	
-			int currValue, // Номинал купюры
-				currNum,   // Текущее наличие купюр выбранного номинала
-				needNum,   // Необходимое количество купюр выбранного номинала для выдачи				 
-				rest;      // Остаток для выдачи в других купюрах
+			int currValue, 
+				currNum,   
+				needNum,   				 
+				rest;      
 			
 			tmpMap = new TreeMap<>(currMap);
 			Properties tactic = new Properties();
 			
-			List<Integer> list = new ArrayList<Integer>(currMap.keySet()); // Получаем перечень всех доступных номиналов
-			Collections.reverse(list); 								       // Сортируем список в обратном порядке от большего к меньшему
+			List<Integer> list = new ArrayList<Integer>(currMap.keySet()); 
+			Collections.reverse(list); 								       
 			Iterator<Integer> litr = list.listIterator();
 						
 			while(litr.hasNext()) {				
@@ -68,7 +68,7 @@ public class Entity {
 					amount -= (currValue*needNum);
 					tactic.put(currValue, needNum);
 				
-				} else if(needNum > currNum) {
+				} else {
 					tmpMap.remove(currValue);
 					amount -= (currValue*currNum);						 						
 					tactic.put(currValue, currNum);
