@@ -41,7 +41,7 @@ public class CashMachine {
 											currencyMap.put(result[1], new Entity());
 									
 										currencyMap.get(result[1]).addNote(value, number);									
-										System.out.println(" OK");									
+										System.out.println("OK");									
 										break;
 									}							
 									else 
