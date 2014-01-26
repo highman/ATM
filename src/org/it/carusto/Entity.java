@@ -25,9 +25,8 @@ public class Entity {
 		if(currMap.containsKey(value)) {			
 			int nNum = currMap.get(value) + number;				
 			currMap.put(value, nNum);			
-		} else {
-			currMap.put(value, new Integer(number));
-		}
+		} else 
+			currMap.put(value, new Integer(number));		
 		total += (value*number);
 	}
 	
